@@ -58,6 +58,10 @@
     [self reducedImageIfNeeded];
 }
 
+- (NSString *)imageValueNamed {
+    return nil;
+}
+
 - (UITableViewCell *)getCellForTableView:(QuickDialogTableView *)tableView controller:(QuickDialogController *)controller {
     QImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QuickformImageElement"];
     if (cell == nil) {
