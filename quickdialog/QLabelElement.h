@@ -17,6 +17,9 @@
 #import <UIKit/UIKit.h>
 #import "QRootElement.h"
 
+/** A label element.  This subclass of QRootElement declares the programmatic interface to a class of objects
+ that display a label element in a form.  Rows that instances of this class display are not editable.
+ */
 @interface QLabelElement : QRootElement {
 
 @protected
@@ -24,14 +27,33 @@
     UIImage *_image;
 }
 
+/** An image to display for the row. */
 @property(nonatomic, strong) UIImage *image;
+
+/** Sets an image by its name. The getter method returns nil. */
 @property(nonatomic, assign) NSString *imageNamed;
+
+/** Accessory type for the displayed cell in the form's table */
 @property(nonatomic, assign) UITableViewCellAccessoryType accessoryType;
+
+/** The value displayed in the cell */
 @property(nonatomic, strong) id value;
 
-
+/** Keeps the displayed cell selected after it is tapped */
 @property(nonatomic) BOOL keepSelected;
 
-- (QLabelElement *)initWithTitle:(NSString *)string Value:(id)value;
+/** @name Initialization */
+
+/** Designated initializer.  
+ 
+ Returns an instance of the class with the provided title and value
+ 
+ @param string
+    The title of the displayed cell
+ @param value
+    The value of the displayed cell
+ @return Returns a newly initialized instance of the class
+ */
+- (QLabelElement *)initWithTitle:(NSString *)string value:(id)value;
 
 @end
